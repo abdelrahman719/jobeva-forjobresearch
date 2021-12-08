@@ -1,0 +1,111 @@
+<div class="cover">
+    <div class="home">
+        <div class="rgba pt-4">
+            <!------------------------navbar------------------------>
+            <div class="navbar" id="header" data-aos="fade-down">
+                <div class="prand">
+                    <a href="" id="prand">Jobeva</a>
+                </div>
+                <div class="position-right-20 h-100 d-flex align-items-center">
+                    <div class="registerLinks">
+                        <div [class]="togleMenu ? 'button-register-toggle': ''" class="button-register">
+                            <a id="login" routerLink="/login">Login</a>
+                            <button class="btn-JoinNow" routerLink="/register">Join Now</button>
+                            <button class="btn-employer">employer?</button>
+                        </div>
+                    </div>
+                    <div class="menu" (click)="clickToggle()">
+                        <i id="menu" class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+            <!--------------------form Search--------------------->
+            <div class="container">
+                <div class="bg-content">
+                    <div class="content" data-aos="fade-up" data-aos-delay="400">
+                        <p class="p-title">Find the Best Jobs in Egypt</p>
+                        <p class="p-description">Searching for vacancies & career opportunities? Jobeva helps you in
+                            your job search in Egypt
+                        </p>
+                        <div class="form">
+                            <form #f="ngForm" (ngSubmit)="OnSearch(f)">
+                                <div class="input-search">
+                                    <input type="text" name="location" #locatoin="ngModel" ngModel placeholder="location">
+                                    <input type="text" name="category" #category="ngModel" ngModel placeholder="category">
+                                </div>
+                                <div class="btn-search">
+                                    <button type="submit" >Search Job</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="chevron-down" (click)="scrollDown(service)"><i class="fas fa-chevron-down"></i></a>
+    </div>
+    <!-------------------------------service---------------------->
+    <div class="service" #service>
+        <div class="slide slide-1">
+            <div class="content-slide" data-aos="fade-in">
+                <h2>Let the jobs find you</h2>
+                <p>Create your free profile to get interview invites and jobs that work for you.</p>
+                <a href="">Get hired</a>
+            </div>
+            <div class="img-slide" data-aos="fade-left">
+                <img src="../../../../assets/images/undraw_interview_rmcf.svg" alt="">
+            </div>
+        </div>
+        <div class="slide slide-2">
+            <div class="content-slide" data-aos="fade-in">
+                <h2>Your job is personal</h2>
+                <p>Tell us more about your goals and we'll match you with the right jobs to help you reach them.</p>
+                <a href="">See jobs</a>
+            </div>
+            <div class="img-slide" data-aos="fade-right">
+                <img src="../../../../assets/images/undraw_digital_nomad_9kgl.svg" alt="">
+            </div>
+        </div>
+        <div class="slide slide-3">
+            <div class="content-slide" data-aos="fade-in">
+                <h2>Skip the paperwork</h2>
+                <p>Your profile is your application. Apply to jobs instantly.</p>
+                <a routerLink="/profile">Create profile</a>
+            </div>
+            <div class="img-slide" data-aos="fade-left">
+                <img src="../../../../assets/images/undraw_personal_information_re_vw8a.svg" alt="">
+            </div>
+        </div>
+        <div class="slide slide-4">
+            <div class="content-slide" data-aos="fade-in">
+                <h2>Ready to level-up?</h2>
+                <p>Excel with our Jobs Hub. Find tips to get ahead and make your goals a reality.</p>
+                <a href="">Learn more</a>
+            </div>
+            <div class="img-slide" data-aos="fade-right">
+                <img src="../../../../assets/images/undraw_Goals_re_lu76.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------join us-------------->
+<div class="join-us">
+    <div class="content-join-us" data-aos="zoom-in">
+        <h2>Get ready for more opportunities!</h2>
+        <p>You are minutes away from the right job.</p>
+        <a routerLink="/register">Join Now</a>
+    </div>
+    <img src="../../../../assets/images/undraw_upgrade_06a0.svg" alt="">
+</div>
+<!---------------------reviews--------------------------->
+<swiper [loop]="true" [slidesPerView]="1" [pagination]="{
+      dynamicBullets: true
+    }" [navigation]="true" class="mySwiper">
+    <ng-template swiperSlide *ngFor="let item of slide">
+        <div class="slide-swiper" data-aos="fade-up">
+            <img [src]="item.image" alt="">
+            <h3>{{item.name}}</h3>
+            <p>{{item.review}}</p>
+        </div>
+    </ng-template>
+</swiper>

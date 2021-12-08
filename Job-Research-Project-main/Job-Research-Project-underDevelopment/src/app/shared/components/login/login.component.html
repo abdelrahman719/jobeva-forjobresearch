@@ -1,0 +1,57 @@
+
+
+
+<div class="register">
+  <div class="bg-login py-5">
+    <div class="prand">
+      <a data-aos="zoom-out-down" routerLink="/" id="prand">Jobeva</a>
+    </div>
+    <div class="container">
+      <!------------------login------------------->
+      <div class="div-login">
+        <form class="login" data-aos="zoom-out-up" [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin)">
+          <h2 class="text-center mb-5">Login</h2>
+          <div *ngIf="res?.message" class="message" [class]="res?.status == 200 ? 'alert alert-success' : 'alert alert-danger'">
+            {{res?.message}}
+          </div>
+          <!-------------------Email---------------->
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <mat-error
+              *ngIf=" !res?.errors?.email && formLogin.controls.email.errors?.email && formLogin.controls.email.dirty">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf=" !res?.errors?.email && formLogin.controls.email.errors?.required ">
+              Email is <strong>required</strong>
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="res?.errors?.email">
+              {{res?.errors?.email}}
+            </div>
+          </mat-form-field>
+                    <!-------------------password---------------->
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf=" !res?.errors?.password && formLogin.controls.password.errors?.required">
+              password is <strong>required</strong>
+            </mat-error>
+            <mat-error
+              *ngIf=" !res?.errors?.password && formLogin.controls.password.errors?.minlength?.actualLength < 8 && !formLogin.controls.password.errors?.required">
+              The password must be at least 8 characters long
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="res?.errors?.password">
+              {{res?.errors?.password}}
+            </div>
+          </mat-form-field>
+          <button mat-raised-button color="primary">login</button>
+          <br>
+          <span class="text-center">New to Jobeva?<a routerLink="/register">Join now</a></span>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

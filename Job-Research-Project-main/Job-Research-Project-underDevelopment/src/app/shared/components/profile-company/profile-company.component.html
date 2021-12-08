@@ -1,0 +1,71 @@
+<div class="profile-company py-5">
+    <div class="form-create-update">
+        <h2>Create Job</h2>
+        <form [formGroup]="formCompany" (ngSubmit)="createJobs(formCompany)">
+            <!-----------------------title---------------------->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Title" formControlName="title">
+                <mat-error>
+                   title is requred
+                </mat-error>
+            </mat-form-field>
+            <!----------------------salary_range---------------->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Salary Range" formControlName="salary_range">
+                <mat-error>
+                    Salary range is requred
+                </mat-error>
+            </mat-form-field>
+            <!----------------------requirements----------------->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Requirements" formControlName="requirements">
+                <mat-error>
+                    Requirements is requred
+                </mat-error>
+            </mat-form-field>
+            <!----------------------description----------------->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Description" formControlName="description">
+                <mat-error>
+                    Description is requred
+                </mat-error>
+            </mat-form-field>
+            <!----------------------years_of_experience----------------->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="years_of_experience" formControlName="years_of_experience">
+                <mat-error>
+                    years of experience is requred
+                </mat-error>
+            </mat-form-field>
+            <!----------------------category_id----------------->
+            <mat-form-field>
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category_id">
+                  <mat-option *ngFor="let item of category?.data; index as index" [value]="index+1">
+                    {{item?.name}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-----------------------location_id--------------------->
+            <mat-form-field>
+                <mat-label>Location</mat-label>
+                <mat-select formControlName="location_id">
+                  <mat-option *ngFor="let item of location?.data; index as index" [value]="index+1">
+                    {{item?.country}} , {{item?.city}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!--------------------------job_type_id--------------------->
+            <mat-form-field>
+                <mat-label>Job tybes</mat-label>
+                <mat-select formControlName="job_type_id">
+                  <mat-option *ngFor="let item of jobTypes?.data; index as index" [value]="item?.id">
+                    {{item?.title}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button type="submit" [disabled]="!formCompany.valid">submit</button>
+        </form>
+    </div>
+    
+</div>

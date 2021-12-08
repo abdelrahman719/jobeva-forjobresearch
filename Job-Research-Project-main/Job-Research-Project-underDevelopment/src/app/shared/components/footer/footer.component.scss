@@ -1,0 +1,71 @@
+
+.da {
+    color: rgb(20, 70, 235) !important;
+}
+.tw {
+    color: rgb(134, 159, 235);
+}
+.yo {
+    color: rgb(211, 5, 5);
+}
+.li {
+    color: darkblue;
+}
+.vv {
+    border-radius: 5px;
+    color: rgb(216, 213, 213) !important;
+    transition: .5s all;
+}
+.vv:hover {
+    transform: scale(1.1,1.1);
+}
+.oi {
+    color: rgb(38, 81, 224);
+    font-weight: bold;
+}
+.rs {
+    color: rgb(38, 81, 224);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 15px;
+}
+.kf a
+{
+    padding: 5px !important;
+}
+a {
+    font-weight: normal;
+    font-size: 14px !important;
+    line-height:25px !important;
+    color: rgb(8, 8, 8);
+    
+}
+.footer {
+    background-color: rgb(202, 210, 245);
+    display: fixed;
+}
+a:hover {
+    color: rgb(38, 81, 224);
+}
+.list-inline-item a
+{
+    padding: 5px 10px ;
+}
+.list-inline-item a:hover
+{
+    color: #fff;
+}
+h4 {
+    font-size: 17px;
+    font-weight: normal;
+    padding: 10px;
+}
+h1 {
+    font-size: 25px;
+    font-weight: normal;
+}
+h2 {
+    font-size: 20PX;
+    font-weight: bold;
+    padding: 15px;
+}

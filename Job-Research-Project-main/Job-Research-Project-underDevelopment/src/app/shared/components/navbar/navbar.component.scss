@@ -1,0 +1,111 @@
+.navbar-brand1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0055D9 !important;
+    margin-top: 15px !important;
+}
+.navbar-brand:hover {
+    color: #0847a7 !important;
+}
+.navbar-brand {
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(90, 86, 86);
+    margin-left: 20px;
+    
+}
+.input-group input
+{
+    background-color: #fafafa;
+    box-shadow: 1px 1px 3px #ccc;
+}
+button {
+    background-color: rgb(211, 211, 211);
+    box-shadow: none !important ;
+    border-radius: 3px !important;
+    border: 1px solid rgb(202, 202, 202);
+    padding: 9px;
+    padding-bottom: 6px;
+    padding-top: 12px;
+    margin-bottom: 10px;
+}
+.btn:hover {
+    background-color: rgb(197, 197, 197);
+}
+
+.links {
+    margin-right: auto;
+}
+.asd {
+    font-size:xx-large;
+    color: rgb(63, 60, 60);
+}
+.asd:hover {
+    color: rgb(42, 85, 226) !important;
+}
+.ddff {
+    background-color: rgb(231, 236, 238);
+    width: 5px !important;
+    border: cornsilk;
+    border-radius: 50px !important;
+    padding: 10px;
+    margin-bottom: 2px;
+    width: 30px !important;
+}
+.ddff:hover {
+    background-color: rgb(240, 242, 243) !important; 
+}
+
+.g {
+    /*margin-left: auto;*/
+    width: 250px;
+    /*z-index: 200;*/
+    
+    box-shadow: 1px 1px 5px 1px rgb(184, 169, 169);
+    border-radius: 5px;
+    /*position: absolute;*/
+}
+i {
+    padding-right: 3px;
+    padding-top: 3px;
+    
+}
+a {
+    color: black !important;
+}
+.c:hover {
+    background-color: rgb(208, 225, 243);
+}
+.y {
+    margin-top: 15px;
+    margin-right: 48px;
+    
+}
+.form-control {
+    width: 300px;
+}
+mat-toolbar {
+    background-color:#fff;
+    box-shadow: 1px 1px 10px #999;
+}
+.header-menu .svg-inline--fa
+{
+    font-size: 50px !important;
+}
+::ng-deep .mat-menu-panel
+{
+    margin-top: 5px !important;
+}
+.dropdown-item .svg-inline--fa
+{
+    margin-right:10px;
+    font-size: 16px;
+    height: initial;
+    width: 1em;
+}
+::ng-deep .mat-menu-content:not(:empty)
+{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+

@@ -1,0 +1,29 @@
+<div class="jobs-bage">
+    <div class="header-search">
+        <div class="content-search" >
+            <h1 data-aos="fade-down">Jobs in Egypt</h1>
+            <form>
+                <div class="input-button-search" data-aos="zoom-out">
+                    <i class="fas fa-search"></i>
+                    <input type="text" [(ngModel)]="search" name="search" placeholder="Search Jobs">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div *ngIf="jobs?.status !== 200" style="margin: auto; width: max-content; padding: 20px; color: rgb(255, 85, 85);font-size: 20px;font-weight: 400;">
+            <p>{{jobs?.message}}</p>
+        </div>
+        <div class="results-filter-jops" >
+            <div class="result-search" *ngFor="let item of jobs?.data | filtterjobs:search"  >
+                <h2 style="cursor: pointer;" routerLink="/jobs/show" [queryParams]="{ job_id: item.id }">{{item.title}}</h2>
+                <p class="name-company">company: {{item?.company?.name ? ''+item.company.name+'' : 'not name'}}</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> {{item.location.country}},{{item.location.city}}</p>
+                <p class="description">{{item.description}}</p>
+                <p class="requirements">{{item.requirements}} EX:{{item.years_of_experience}}</p>
+                <p class="range-salary">salary: {{item.salary_range}}</p>
+            </div>
+        </div>
+    </div>
+</div>

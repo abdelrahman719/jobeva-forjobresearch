@@ -1,0 +1,83 @@
+
+<mat-toolbar >
+  <div class="mo d-flex container">
+    <a class="navbar-brand1" routerLink="jobs">jobeva</a>
+    <div class="links  d-flex ">
+        <a class="navbar-brand" routerLink="/EXPLORE">EXPLORE</a>
+        <a class="navbar-brand" routerLink="/SAVED">SAVED</a>
+        <a class="navbar-brand" routerLink="/APPLICATIONS">APPLICATIONS</a>
+    </div>
+    <div class="amer d-flex">
+      <!-- <div class="y  "> 
+        <div class=" input-group  ">
+          
+            <input type="search" id="form1" class="form-control border " placeholder="search jobs"/>
+            <label class="form-label " for="form1"></label>
+        
+          <button type="button" class="btn  ">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div> -->
+      <button *ngIf="isLogin" class="ddff"mat-button [matMenuTriggerFor]="menu"><i class=" asd fas fa-user-circle"></i></button>
+        
+        <mat-menu #menu="matMenu" >
+            <div class="g  ">
+              <div class="c dropdown-item d-flex header-menu" style="cursor: pointer;" routerLink="/profile" >
+                <i class="fas fa-user-tie"></i>
+                <a class="">{{name}}<br><span style="font-size: 12px;color: #555;">{{email}}</span></a>
+              </div>
+              <hr>
+              <div class="c dropdown-item d-flex">
+                <i class="fas fa-pen"></i>  
+                <a class="" routerLink="/profile">Edit Profile</a>
+              </div>
+              <!-- <div class="c dropdown-item d-flex">
+                <i class="fas fa-user-friends"></i>
+                <a class="" routerLink="/">Career Coaching</a>
+              </div>
+              <div class="c dropdown-item d-flex">
+                <i class="fas fa-book-open"></i>
+                <a class="" routerLink="/">Career Readings</a>
+              </div>
+              <div class="c dropdown-item d-flex">
+                <i class="fas fa-chalkboard"></i>
+                <a class="" routerLink="/">Learning Opportunities</a>
+              </div>
+              
+              <div class="c dropdown-item d-flex">
+                <i class="fas fa-phone-volume"></i>
+                <a class="" routerLink="/">Help Center</a>
+              </div>
+              <div class="c dropdown-item d-flex">
+                <i class="fas fa-address-card"></i>
+                <a class="" routerLink="/">About Us</a>
+              </div>
+              <div class="c dropdown-item d-flex">
+                <i class="fas fa-handshake"></i>
+                <a class="" routerLink="/">Become a Partner</a>
+              </div> 
+              <div class="c dropdown-item d-flex">
+                <i class="fas fa-envelope"></i>
+                <a class="" routerLink="/">Contact Us</a>
+              </div>
+              -->
+              <div class="c dropdown-item d-flex" routerLink="/settings/account"  style="cursor: pointer;">
+                <i class="fas fa-cog"></i>
+                <a class="" >Account Settings</a>
+              </div>
+              <div class="c dropdown-item d-flex" style="cursor: pointer;" (click)="Logout()">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                <a>Logout</a>
+              </div>       
+        </div>  
+        </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>
+         
+
+
+
+  
+

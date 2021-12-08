@@ -1,0 +1,40 @@
+<div class="details py-4">
+    <div class="container">
+        <div class="company-detail">
+            <div class="company-content">
+                <h3>{{jobDetails?.data?.company?.name}}</h3>
+                <p class="company-email">{{jobDetails?.data?.company?.email}}</p>
+                <p class="company-description">{{jobDetails?.data?.company?.company_detail?.description}}</p>
+                <div class="btn-apply">
+                    <button (click)="Apply()">Apply For Job</button>
+                    <div class="show-form-apply" *ngIf="show">
+                        <form [formGroup]="form" (ngSubmit)=(formApply(form))>
+                            <span (click)="close()"><i class="fas fa-times"></i></span>
+                            <input type="file" name="resume" formControlName="resume" accept="application/pdf">
+                            <button [disabled]="!form.valid" type="submit">apply</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="company-logo">
+                <img [src]="!jobDetails?.data?.company?.company_detail?.logo ? ''+jobDetails?.data?.company?.company_detail?.logo+'':'../../../assets/images/office-1209640 (1).jpg'" [alt]="jobDetails?.data?.company?.company_detail?.logo">
+            </div>
+        </div>
+        <div class="job-details padding-shadow">
+            <h5>Job Details</h5>
+            <div class='d-flex'><span>title:</span><p>{{jobDetails?.data.title}}</p></div>
+            <div class='d-flex'><span>Experience Needed:</span><p>{{jobDetails?.data.years_of_experience}}</p></div>
+            <div class='d-flex'><span>location:</span><p>{{jobDetails?.data.location.country}},{{jobDetails?.data.location.city}}</p></div>
+            <div class='d-flex'><span>salary range:</span><p>{{jobDetails?.data.salary_range}}</p></div>
+            <div class='d-flex'><span>Job Categories:</span><p>{{jobDetails?.data.category.name}}</p></div>
+        </div>
+        <div class="description padding-shadow">
+            <h5>Job Description</h5>
+            <p>{{jobDetails?.data.description}}</p>
+        </div>
+        <div class="requirements padding-shadow">
+            <h5>Job Requirements</h5>
+            <p>{{jobDetails?.data.requirements}}</p>
+        </div>
+    </div>
+</div>

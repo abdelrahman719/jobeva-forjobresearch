@@ -1,0 +1,90 @@
+<div class="register">
+  <div class="bg-register py-4">
+    <!-----------------navbar----------------->
+    <nav class="navbar" data-aos="fade-down">
+      <div class="container">
+        <div class="prand">
+          <a routerLink="/" id="prand">Jobeva</a>
+        </div>
+        <button class="btn-employer">employer?</button>
+      </div>
+    </nav>
+    <div class="container py-5">
+      <!------------------signUp------------------->
+        <form class="sginup" data-aos="zoom-out-up" [formGroup]="formRegiter" (ngSubmit)="onSubmit()">
+          <h2 class="text-center mb-5">Sign Up</h2>
+          <div *ngIf="res?.message" class="message" [class]="res?.status == 200 ? 'alert alert-success' : 'alert alert-danger'">
+            {{res?.message}}
+          </div>
+          <!-------------------user name---------------->
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>User name</mat-label>
+            <input matInput formControlName="username">
+            <mat-error *ngIf=" !res?.errors?.name && formRegiter.controls.username.errors?.required">
+              user name is <strong>required</strong>
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="res?.errors?.name">
+              {{res?.errors?.name}}
+            </div>
+          </mat-form-field>
+          <!-------------------Email---------------->
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <mat-error
+              *ngIf=" !res?.errors?.email && formRegiter.controls.email.errors?.email && formRegiter.controls.email.dirty">
+              Please enter a valid email address
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="res?.errors?.email">
+              {{res?.errors?.email}}
+            </div>
+            <mat-error *ngIf=" !res?.errors?.email && formRegiter.controls.email.errors?.required ">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <!-------------------password---------------->
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf=" !res?.errors?.password && formRegiter.controls.password.errors?.required">
+              password is <strong>required</strong>
+            </mat-error>
+            <mat-error
+              *ngIf=" !res?.errors?.password && formRegiter.controls.password.errors?.minlength?.actualLength < 8 && !formRegiter.controls.password.errors?.required">
+              The password must be at least 8 characters long
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="res?.errors?.password">
+              {{res?.errors?.password}}
+            </div>
+          </mat-form-field>
+          <!-------------------confirm password---------------->
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>confirm Password</mat-label>
+            <input matInput formControlName="confirmPassword" [type]="hide2 ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide2">
+              <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error
+              *ngIf="!res?.errors?.password_confirmation && formRegiter.controls.confirmPassword.errors?.required">
+              confirm Password is <strong>required</strong>
+            </mat-error>
+            <mat-error
+              *ngIf=" !res?.errors?.password_confirmation && formRegiter.controls.confirmPassword.errors?.minlength?.actualLength < 8 && !formRegiter.controls.confirmPassword.errors?.required">
+              The password must be at least 8 characters long
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="res?.errors?.password_confirmation">
+              {{res?.errors?.password_confirmation}}
+            </div>
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="primary">Sign Up</button>
+          <br>
+          <span class="text-center">Already on Jobeva? <a routerLink="/login">Sign in</a></span>
+        </form>
+      </div>
+  </div>
+</div>

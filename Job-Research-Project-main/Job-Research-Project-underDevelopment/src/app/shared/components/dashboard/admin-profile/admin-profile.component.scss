@@ -1,0 +1,131 @@
+
+
+
+*
+{
+    margin: 0;
+ 
+    box-sizing: border-box;
+}
+.admins-header
+{
+    height: 15vh ;
+    background-image: url(../../../../../assets/images/admins.jpg);
+    width: 100%;
+    position: relative;
+   
+    h1
+    {
+        background-color: #e9983be7 !important;
+        height: 15vh !important;
+       position: absolute;
+       top: 0;
+       left: 0;
+       left: 0;
+       right: 0;
+       
+    }
+}
+.my-tabs
+{
+    background-color: #fff !important;
+    color: black;
+    text-align: left;
+    padding: 15px 24px !important;
+    border-bottom: 1px solid #ebedf0 ;
+    font-size: 15px;
+    line-height: 20px;
+    transition: all .3s;
+    position: relative;
+    display: block;
+
+}
+
+.profile-admin
+{
+    background-color: white !important;
+    font-family:'Verdana' !important;
+    color: #252422 !important;
+  
+}
+
+
+label ,th
+{
+    color: #023047;
+    font-size: larger;
+}
+.bg-orange
+{
+background-color: #FB8500 !important;
+color: white;
+border-radius: 0;
+
+}
+.bg-yellow
+{
+    background-color: #FFB703 !important;
+color: #023047;
+border-radius: 0;
+}
+.btn:hover
+{
+    transform: scale(1.02);
+}
+
+.inputs-styling
+{
+    border: none !important;
+    background-color: white;
+    color: black;
+
+}
+.profile-img
+{
+    width: 100px;
+    height: 100px;
+}
+.info-p
+{
+    color: darkgray;
+    font-size: smaller;
+}
+
+::ng-deep.mat-tab-label .mat-tab-label-content 
+{
+    color: #FB8500 !important;
+  
+    padding: 20px;
+    font-size: large;
+    
+}
+.fa-user-edit , .fa-user-minus ,.fa-user-plus
+{
+    color: #FB8500 ;
+    font-size: larger; 
+    
+}
+.fa-user-edit 
+{
+    color: rgb(59, 228, 59);
+}
+.fa-user-minus 
+{
+    color: rgba(226, 38, 38, 0.678);
+}
+.fa-user-edit , .fa-user-minus ,.fa-user-plus:hover
+{
+    cursor: pointer;
+}
+.hide-input
+{
+    width: 0px !important;
+    
+}
+
+/********************************************/
+
+  .test
+  {
+      background-color: green;
+  }

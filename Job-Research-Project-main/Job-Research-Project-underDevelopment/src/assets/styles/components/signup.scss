@@ -1,0 +1,94 @@
+.bg-register
+{
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+  background: linear-gradient(to left , rgba(0, 0, 0, 0.7)  0%,rgba(5, 0, 102, 0.7)  100%),url('../../images/silhouette-executive-holding-clipboard.jpg');
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  .navbar
+  {
+    width: 100%;
+    z-index: 99;
+    position: relative;
+    .btn-employer
+      {
+          position: absolute;
+          right: 100px;
+      border: none;
+      padding: 5px 12px;
+      line-height: 22px;
+      font-size: 14px;
+      font-weight: 400;
+      border-radius: 2px;
+      color:#fff;
+      background: #34ac79;
+      }
+  }
+  .navbar .prand a
+  {
+    font-size: 30px;
+    line-height: 21px;
+    padding-right: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    color:#fff;
+  }
+  .sginup
+  {
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .message
+  {
+    position: absolute;
+    top: -32px;
+    z-index: 1;
+    width: max-content;
+  }
+  .example-full-width
+  {
+    width: 100%;
+    color: #000;
+  }
+  .mat-form-field-flex 
+  {
+    background-color: #fff !important;
+  }
+  .mat-form-field-subscript-wrapper
+  {
+    margin-top: 3px;
+  }
+
+  .sginup
+  {
+    width: 400px;
+    background-color: rgba(255,255,255,.5);
+    box-shadow: #000 2px 2px 10px ;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .error-form
+  {
+    position: absolute;
+    top: 39px;
+    font-size: 75%;
+  }
+  .alert-message
+  {
+    display: none;
+  }
+}
+
+@media (max-width:576px) {
+  .sginup
+  {
+    width: 90%;
+  }
+}

@@ -1,0 +1,158 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+}
+body
+{
+    font-family: Open Sans,sans-serif;
+}
+.jobs-bage
+{
+    width: 100%;
+    min-height: 80vh;
+    .header-search
+{
+    width: 100%;
+    height: 105px;
+    background-color: rgb(0, 30, 76);
+    position: relative;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.content-search
+{
+    position: absolute;
+    top: 30px;
+    width: 70%;
+}
+.content-search h1
+{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.input-button-search
+{
+    position: relative;
+}
+.fa-search
+{
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    color: #888;
+    width: 22px;
+    height: 22px;
+}
+.input-button-search input
+{
+    background: #fff;
+    width: 100%;
+    height: 64px;
+    border: none;
+    padding: 10px 8px 10px 50px;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.45px;
+    line-height: 27px;
+    box-shadow: 1px 1px 3px #ccc;
+}
+.input-button-search input:focus
+{
+    outline: 0;
+    box-shadow: #999 1px 1px 5px;
+}
+.input-button-search button
+{
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    background: #0055D9;
+    color:#fff;
+    border-radius: 2px;
+    border: none;
+}
+/***********results-filter-jops******************/
+.results-filter-jops
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+.result-search
+{
+    width: 80%;
+    box-shadow: #ccc 1px 1px 5px;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    .name-company{
+        color: #666;
+    }
+    h2
+    {
+        font-size: 20px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0.3px;
+        color: rgb(0, 85, 217);
+    }
+    .img-company
+    {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        box-shadow: #ccc 1px 1px 5px ;
+        cursor: pointer;
+    }
+    .location
+    {
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.27px;
+        color: #000;
+    }
+    .description
+    {
+        font-size: 16px;
+        font-weight: 400;
+        color: #030026;
+        width: 80%;
+    }
+    .requirements
+    {
+        font-size: 13px;
+        font-weight: 200;
+        color: #666;
+    }
+}
+}
+
+@media (max-width: 768px) {
+    .input-button-search button
+    {
+        display: none;
+    }
+    .result-search
+    {
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .result-search
+    {
+        width: 100%;
+    }
+}

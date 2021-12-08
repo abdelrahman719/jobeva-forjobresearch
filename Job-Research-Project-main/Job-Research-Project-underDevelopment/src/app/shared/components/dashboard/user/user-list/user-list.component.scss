@@ -1,0 +1,87 @@
+        /* Structure */
+
+        table {
+            width: 100%;
+        }
+
+        .mat-form-field {
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .dropdown-menu.show button:hover {
+            background: #e9ecef;
+        }
+
+        .dropdown-menu {
+            padding: 0 !important;
+            min-width: 6rem;
+        }
+
+        input.search {
+            border: 2px solid #0055d9;
+            background: #fff;
+        }
+
+        button.btn-sm.btn-primary.border-0.m-2 {
+            background-color: #0055d9;
+        }
+
+        span#search-addon {
+            position: absolute;
+            right: 0;
+            background-color: transparent;
+            top: 0.5rem;
+        }
+
+        .table-responsive {
+            .table-content {
+                background-color: #ffffff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .mat-elevation-z8 {
+                box-shadow: none;
+            }
+            button {
+                color: #ff9f1c;
+            }
+            .mat-paginator,
+            .mat-paginator-page-size .mat-select-trigger {
+                color: #0055d9 !important;
+            }
+            th.mat-header-cell {
+                color: #0055d9;
+            }
+            .mat-row:nth-child(odd) {
+                background-color: #f8f9fa;
+            }
+            .mat-row {
+                border: none;
+            }
+            // .table-responsive[_ngcontent-vcc-c264] th.mat-header-cell[_ngcontent-vcc-c264] {
+            //     color: #0055d9;
+            // }
+        }
+
+        button.btn-sm.btn-primary.border-0.m-2 {
+            background-color: #ff9f1c;
+        }
+
+        .btn-sm.btn-primary.border-0.m-2 {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        button:focus {
+            box-shadow: none !important;
+        }
+
+         ::ng-deep {
+            .mat-menu-item .mat-icon.delete {
+                color: red !important
+            }
+            .mat-menu-item .mat-icon.edit {
+                color: #0055d9 !important
+            }
+        }

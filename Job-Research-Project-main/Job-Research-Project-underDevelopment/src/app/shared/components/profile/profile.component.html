@@ -1,0 +1,180 @@
+
+<div class="profile">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-4 text-right">
+        <div class="my-3 align-items-start">
+          <div class="nav shad flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="my-tabs border active" id="v-pills-general-info-tab" data-bs-toggle="pill"
+              data-bs-target="#general-info" type="button" role="tab" aria-controls="v-pills-general-info"
+              aria-selected="true">
+              General Info
+            </button>
+            <button class="my-tabs border" id="v-pills-experience-tab" data-bs-toggle="pill"
+              data-bs-target="#experience" type="button" role="tab" aria-controls="v-pills-experience"
+              aria-selected="false">
+              Experience
+            </button>
+            <button class="my-tabs border" id="v-pills-objective-tab" data-bs-toggle="pill" data-bs-target="#objective"
+              type="button" role="tab" aria-controls="v-pills-objective" aria-selected="false">
+              objective & Interests
+            </button>
+
+
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="col-md-8 row my-3">
+        <form class="row " (ngSubmit)="save(profileData)" action="" [formGroup]="profileData">
+          <div class="col-md-12 row">
+            <div class="col-md-2">
+              <img [src]="profileImgSrc" class="rounded-circle profile-img " alt="" />
+            </div>
+            <div class="col-md-8 ">
+              <h4 for="">Profile photo</h4>
+
+
+
+              <p class="info-p">You can upload a .jpg, .png, or .gif photo with max size of 5MB.</p>
+
+
+
+
+              <input (change)="changePhoto($event)"  class="hide-input" type="file" id="profile-photo" name="profile-photo">
+              <label for="profile-photo"   class="btn me-2 my-2 bg-blue"> Change Photo </label>
+
+
+
+
+
+
+              
+              <button id="edit" type="button" (click)="edit()" class="btn me-2 my-2 btn-outline-danger ">
+                Edit Profile
+              </button>
+              <button id="save" type="submit" class="btn me-2 my-2 btn-outline-primary  ">
+                Save edits
+              </button>
+            </div>
+          </div>
+
+
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="general-info" role="tabpanel" aria-labelledby="general-info-tab">
+
+
+              <div class="col-md-12 shad bg-white py-3 px-2 border mt-2 pt-2">
+                <h3>Personal Information</h3>
+
+
+                <label class="d-inline-block">Name :</label>
+                <input [class.inputs-styling]="!setborder" [class.inputs-styling]="!setborder"
+                  class="form-control w-50  d-inline-block  my-2" formControlName="name" type="text">
+                <br>
+
+                <label class="d-inline-block">Adress:</label>
+                <input [class.inputs-styling]="!setborder" class="form-control w-50  d-inline-block  my-2"
+                  formControlName="adress" type="text">
+
+                <br>
+                <label class="d-inline-block">Phone:</label>
+                <input [class.inputs-styling]="!setborder" class="form-control w-50  d-inline-block  my-2"
+                  formControlName="phoneNumber" type="text">
+
+                <br>
+
+                <label class="d-inline-block">Email:</label>
+                <input [class.inputs-styling]="!setborder" class="form-control w-50  d-inline-block  my-2"
+                  formControlName="mail" type="text">
+
+
+              </div>
+
+              <div class="col-md-12 shad border bg-white py-3 px-2 mt-2 py-3">
+                <h3>Bio</h3>
+
+
+                <textarea rows="3" [class.inputs-styling]="!setborder" class="form-control  my-2" formControlName="bio"
+                  type="text"></textarea>
+              </div>
+
+              <div class="col-md-12 shad border bg-white py-3 px-2 mt-2 mb-2">
+                <h5>Work Experience</h5>
+                <textarea rows="3" [class.inputs-styling]="!setborder" class="form-control  my-2"
+                  formControlName="workExperience" type="text"></textarea>
+
+              </div>
+              <div class="col-md-12 shad border bg-white py-3 px-2 mb-2">
+                <h5>Skills</h5>
+                <textarea rows="3" [class.inputs-styling]="!setborder" class="form-control  my-2"
+                  formControlName="skills" type="text"></textarea>
+
+              </div>
+              <div class="col-md-12 shad bg-white py-3 px-2 border mb-2">
+                <h5>Education</h5>
+                <textarea rows="3" [class.inputs-styling]="!setborder" class="form-control  my-2"
+                  formControlName="education" type="text"></textarea>
+
+              </div>
+            </div>
+
+
+
+
+
+
+            <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+              <div class="col-md-12 shad bg-white my-3 py-3 px-2 border mb-2">
+                <h5>Experience</h5>
+                <textarea placeholder="set all your experience" rows="3" [class.inputs-styling]="!setborder" class="form-control  my-2"
+                  formControlName="education" type="text"></textarea>
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="objective" role="tabpanel" aria-labelledby="objective-tab">
+              <div class="col-md-12 shad bg-white my-3 py-3 px-2 border mb-2">
+                <h5>Objective</h5>
+                <textarea placeholder="write your all goals" rows="3" [class.inputs-styling]="!setborder" class="form-control  my-2"
+                  formControlName="education" type="text"></textarea>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+
+
+
+      </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

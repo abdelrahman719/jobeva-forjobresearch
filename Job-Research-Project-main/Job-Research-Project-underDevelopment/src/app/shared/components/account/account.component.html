@@ -1,0 +1,48 @@
+<div class="settings py-5">
+  <div *ngIf="message" class="message" [class]="message?.status == 200 ? 'bg-success' : 'bg-danger'">
+    <p>{{message?.message}}</p>
+  </div>
+    <div class="update-password my-5">
+        <h4>Change Password</h4>
+        <p class="my-2">To change your account password, enter your current password, then enter your new password and confirm it.</p>
+        <form [formGroup]="formUpdate" (ngSubmit)="submiteUpdate(formUpdate)">
+                      <!--------------------------old password----------------------------->
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>old password</mat-label>
+            <input matInput formControlName="old_password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="formUpdate.controls.old_password.errors?.required && !message?.errors?.old_password">
+              password is <strong>required</strong>
+            </mat-error>
+            <mat-error
+              *ngIf="formUpdate.controls.old_password.errors?.minlength?.actualLength < 8 && !formUpdate.controls.old_password.errors?.required && !message?.errors?.old_password">
+              The password must be at least 8 characters long
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="message?.errors?.old_password">
+              {{message?.errors?.old_password}}
+            </div>
+          </mat-form-field>
+          <!--------------------------new password----------------------------->
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>new password</mat-label>
+            <input matInput formControlName="new_password" [type]="hide2 ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+              <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="formUpdate.controls.new_password.errors?.required && !message?.errors?.new_password">
+              password is <strong>required</strong>
+            </mat-error>
+            <mat-error
+              *ngIf="formUpdate.controls.new_password.errors?.minlength?.actualLength < 8 && !formUpdate.controls.new_password.errors?.required && !message?.errors?.new_password">
+              The password must be at least 8 characters long
+            </mat-error>
+            <div class="mat-error error-form"  *ngIf="message?.errors?.new_password">
+              {{message?.errors?.new_password}}
+            </div>
+          </mat-form-field>
+          <button mat-raised-button color="primary">update password</button>
+        </form>
+    </div>
+</div>
